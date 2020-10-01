@@ -18,7 +18,20 @@ btn.addEventListener('click', () => {
     })
 });
 
+message.addEventListener('keypress', () => {
+    console.log('typing')
+    socket.emit('typing', user.value);
+})
+
+
+//listen for events
 socket.on('chat', (data) => {
+    //quick fix to constant typing message
+    feedback.innerHTML = "";
     output.innerHTML += `<p><strong>${data.user}: </strong>${data.message}</p>`
+})
+
+socket.on('typing', data => {
+    feedback.innerHTML = `<p><em>${data} is typing a message</em></p>`
 })
 

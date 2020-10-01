@@ -21,4 +21,9 @@ io.on('connection', (socket) => {
     socket.on('chat', (data) => {
         io.sockets.emit('chat', data);
     })
+
+    socket.on('typing', data => {
+        //not io, but socket
+        socket.broadcast.emit('typing', data);
+    })
 })

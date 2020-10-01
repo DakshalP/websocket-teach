@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <div class="chat-container">
+    <div id="chat-container">
         <h2>Chat!</h2>
-        <div class="chat-window">
+        <div id="chat-window">
             <!-- where messages will be displayed -->
-            <div class="output"></div>
-            
-            <input type="text" id="name" placeholder="Your name">
-            <input type="text" id="message" placeholder="Your message">
+            <div id="output"></div>
         </div>
+        <input type="text" id="name" placeholder="Your name">
+        <input type="text" id="message" placeholder="Your message">
+        <button id="send">Send</button>
     </div>
     <script src="./chat.js"></script>
 </body>
